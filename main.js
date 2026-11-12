@@ -6,27 +6,27 @@ const grades = [
   { name: "Студент_X", score: 45 }
 ];
 
-// Задание 1 (Программист 1): Вычисление среднего балла
+// Задание 1: Вычисление среднего балла
 function calculateAverage(data) {
   const sum = data.reduce((acc, student) => acc + student.score, 0);
   return sum / data.length;
 }
 
-// Задание 2 (Программист 2): Поиск лучшего студента
+// Задание 2: Поиск лучшего студента
 function findTopStudent(data) {
-  return data.reduce((top, student) => 
+  return data.reduce((top, student) =>
     student.score > top.score ? student : top
   ).name;
 }
 
-// Задание 3 (Программист 3): Список должников
+// Задание 3: Список должников
 function filterFailed(data, passScore) {
   return data
     .filter(student => student.score < passScore)
     .map(student => student.name);
 }
 
-// Задание 4 (Программист 4): Добавление буквенных оценок
+// Задание 4: Добавление буквенных оценок
 function addLetterGrade(data) {
   return data.map(student => {
     let letter = "C";
@@ -36,7 +36,7 @@ function addLetterGrade(data) {
   });
 }
 
-// Итоговое задание (Тимлид): Сборка и вывод результатов
+// Итоговый вывод
 console.log("--- ОТЧЕТ ПО УСПЕВАЕМОСТИ ---");
 console.log(`1. Средний балл группы: ${calculateAverage(grades).toFixed(2)}`);
 console.log(`2. Лучший студент: ${findTopStudent(grades)}`);
